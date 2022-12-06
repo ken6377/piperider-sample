@@ -1,0 +1,44 @@
+name: piperider-ci
+
+on:
+  workflow_dispatch:
+
+
+jobs:
+  piperider-ci:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.9.x"
+
+      # 「Google Workload identity federationでGitHub Actionsを設定してみた」 https://www.asobou.co.jp/blog/web/workload-identity
+      - id: auth
+        name: Authenticate to google cloud platform
+        uses: google-github-actions/auth@v1
+        with:
+          workload_identity_provider: ${{ secrets.GCP_IDENTITY_PROVIDER }}
+          service_account: ${{ secrets.GCP_SERVICE_ACCOUNT }}
+          create_credentials_file: 'true'
+          access_token_lifetime: 1200s
+
+      - name: install
+        run: pip install -r requirements.txt
+
+      - name: PipeRider run
+        run: |
+             cd piperider
+             piperider run --output ./www
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
