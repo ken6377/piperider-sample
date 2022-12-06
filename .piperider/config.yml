@@ -1,0 +1,11 @@
+dataSources:
+- name: piperider
+  type: bigquery
+
+profiler:
+   table:
+     limit: 1000000
+     duplicateRows: true
+
+telemetry:
+  id: bf2c3a8c685f4595bac450ac6f6edf22

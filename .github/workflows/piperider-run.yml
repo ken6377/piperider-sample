@@ -32,9 +32,7 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: PipeRider run
-        run: |
-             cd piperider
-             piperider run --output ./www
+        run: piperider run
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
