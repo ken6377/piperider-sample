@@ -3,7 +3,6 @@ name: piperider-ci
 on:
   workflow_dispatch:
 
-
 jobs:
   piperider-ci:
     runs-on: ubuntu-latest
