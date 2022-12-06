@@ -27,7 +27,7 @@ jobs:
           service_account: ${{ secrets.GCP_SERVICE_ACCOUNT }}
 
       - name: install
-        run: pip install -U 'piperider[bigquery]'
+        run: pip install -r requirements.txt
 
       - name: PipeRider run
         run: piperider run
