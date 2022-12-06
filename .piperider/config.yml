@@ -4,8 +4,7 @@ dataSources:
 
 profiler:
    table:
-     limit: 1000000
-     duplicateRows: true
+     duplicateRows: false
 
 telemetry:
-  id: bf2c3a8c685f4595bac450ac6f6edf22
+  id: d91e2d33e1674631ae7b92479f4a1a1e
