@@ -1,0 +1,13 @@
+piperider_dbt:
+  outputs:
+    prod:
+      dataset: mlb_prod
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      location: US
+      method: oauth
+      priority: interactive
+      project: piperider-sample-gcp
+      threads: 20
+      type: bigquery
+  target: prod

@@ -1,10 +1,14 @@
 dataSources:
-- name: piperider
+- name: piperider_dbt
   type: bigquery
+  dbt:
+    profile: piperider_dbt
+    target: dev
+    projectDir: piperider_dbt
 
 profiler:
    table:
-     duplicateRows: false
+     duplicateRows: true
 
 telemetry:
-  id: d91e2d33e1674631ae7b92479f4a1a1e
+  id: 021f1389167e4f8c87fb97122ae0b393

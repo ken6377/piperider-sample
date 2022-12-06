@@ -33,3 +33,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 models:
   piperider_dbt:
+    +dbt-osmosis: "schema.yml"
+    +persist_docs:
+      relation: true
+      columns: true

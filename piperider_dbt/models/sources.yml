@@ -9,6 +9,8 @@ sources:
         columns:
           - name: gameid
             description: ""
+            tests:
+              - not_null
           - name: seasonid
             description: ""
           - name: seasontype
@@ -303,6 +305,8 @@ sources:
         columns:
           - name: gameid
             description: ""
+            tests:
+              - not_null
           - name: seasonid
             description: ""
           - name: seasontype
@@ -597,6 +601,8 @@ sources:
         columns:
           - name: gameid
             description: ""
+            tests:
+              - not_null
           - name: gamenumber
             description: ""
           - name: seasonid
