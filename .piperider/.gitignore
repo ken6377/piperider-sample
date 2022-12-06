@@ -3,5 +3,4 @@ __pycache__/
 logs/
 reports/
 comparisons/
-credentials.yml
 .unsend_events.json
