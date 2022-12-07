@@ -12,23 +12,23 @@ no1 as (
 
 no2 as (
 
-select
-  -- https://discourse.getdbt.com/t/a-partial-workaround-for-dbt-utils-star-not-working-with-ctes/1369
-  {%- set select_columns = "
-  gameId,
-  startTime,
-  venueCapacity,
-  dayNight,
-  venueName,
-  hitterLastName,
-  hitterFirstName,
-  homeFinalRuns
-  "-%}
+  select
+    -- https://discourse.getdbt.com/t/a-partial-workaround-for-dbt-utils-star-not-working-with-ctes/1369
+    {%- set select_columns = "
+    gameId,
+    startTime,
+    venueCapacity,
+    dayNight,
+    venueName,
+    hitterLastName,
+    hitterFirstName,
+    homeFinalRuns
+    "-%}
 
-  {{select_columns}}
+    {{select_columns}}
 
-from
-  no1
+  from
+    no1
 
 )
 
