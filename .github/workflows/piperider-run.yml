@@ -3,12 +3,17 @@ name: piperider-ci
 on:
   workflow_dispatch:
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   piperider-ci:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - name: checkout
@@ -40,3 +45,15 @@ jobs:
         run: |
               cd piperider_dbt
               piperider run
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v2
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: 'piperider_dbt/.piperider/outputs/latest/'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
