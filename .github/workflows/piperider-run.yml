@@ -29,8 +29,14 @@ jobs:
       - name: install
         run: pip install -r requirements.txt
 
+      - name: dbt run
+        run: |
+              cd piperider_dbt
+              dbt --version
+              dbt deps
+              dbt build
+
       - name: PipeRider run
         run: |
               cd piperider_dbt
               piperider run
-
