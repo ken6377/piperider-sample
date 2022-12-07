@@ -34,5 +34,8 @@ models:
         description: アウェーチーム名
       - name: status
         description: 試合ステータス（終了、キャンセルなど）
+        tests:
+          - accepted_values:
+              values: ['closed', 'canceled', 'unnecessary']
       - name: dayNight
         description: デーゲーム or ナイター
