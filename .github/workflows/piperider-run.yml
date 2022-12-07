@@ -43,7 +43,7 @@ jobs:
       - name: PipeRider run
         run: |
               cd piperider_dbt
-              piperider run
+              piperider run --dbt-state ./target
 
       - name: Setup Pages
         uses: actions/configure-pages@v2
