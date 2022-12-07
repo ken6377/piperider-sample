@@ -12,20 +12,20 @@ no1 as (
 
 no2 as (
 
-select
-  {%- set select_columns = "
-  gameId,
-  startTime,
-  homeTeamName,
-  awayTeamName,
-  status,
-  dayNight
-  "-%}
+  select
+    {%- set select_columns = "
+    gameId,
+    startTime,
+    homeTeamName,
+    awayTeamName,
+    status,
+    dayNight
+    "-%}
 
-  {{select_columns}}
+    {{select_columns}}
 
-from
-  no1
+  from
+    no1
 
 )
 
