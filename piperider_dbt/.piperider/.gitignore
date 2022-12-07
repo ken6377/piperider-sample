@@ -5,4 +5,4 @@ reports/
 comparisons/
 credentials.yml
 .unsend_events.json
-output/
+outputs/
