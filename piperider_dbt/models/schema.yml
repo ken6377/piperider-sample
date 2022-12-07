@@ -3,6 +3,8 @@ models:
   - name: sample_games_post_wide
     columns:
       - name: gameId
+        tests:
+          - not_null
       - name: startTime
       - name: venueCapacity
       - name: dayNight
@@ -13,6 +15,8 @@ models:
   - name: sample_schedules
     columns:
       - name: gameId
+        tests:
+          - not_null
       - name: startTime
       - name: homeTeamName
       - name: awayTeamName
