@@ -3,22 +3,36 @@ models:
   - name: sample_games_post_wide
     columns:
       - name: gameId
+        description: 試合id
         tests:
           - not_null
       - name: startTime
+        description: 試合開始時間 
       - name: venueCapacity
+        description: 試合会場の収容人数
       - name: dayNight
+        description: デーゲーム or ナイター
       - name: venueName
+        description: 試合会場名
       - name: hitterLastName
+        description: 打者氏名（Last Name）
       - name: hitterFirstName
+        description: 打者氏名（First Name）
       - name: homeFinalRuns
+        description: ホームラン本数
   - name: sample_schedules
     columns:
       - name: gameId
+        description: 試合id
         tests:
           - not_null
       - name: startTime
+        description: 試合開始時間
       - name: homeTeamName
+        description: ホームチーム名
       - name: awayTeamName
+        description: アウェーチーム名
       - name: status
+        description: 試合ステータス（終了、キャンセルなど）
       - name: dayNight
+        description: デーゲーム or ナイター
