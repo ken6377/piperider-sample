@@ -1,5 +1,3 @@
-{{ config(materialized='table') }}
-
 with
 
 no1 as (
